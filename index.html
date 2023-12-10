@@ -13,7 +13,17 @@
         <div class="sidebar"></div>
         <div class="container">
             <div class="calendar">
-                <h2 class="calendar"></h2>
+                <h2 class="calendar">Calendar</h2>
+                <div class="month">
+                    <button id="prevMonth" onclick="prevMonth()"><</button>
+                    <h3 id="monthText"></h3>
+                    <button id="nextMonth" onclick="nextMonth()">></button>
+                </div>
+                <div class="year">
+                    <button id="prevYear" onclick="prevYear()"></button>
+                    <h3 id="yearText"></h3>
+                    <button id="nextYear" onclick="nextYear()"></button>
+                </div>
                 <table>
                     <thead>
                         <tr>
