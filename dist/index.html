@@ -9,40 +9,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div class="header"></div>
-        <div class="sidebar"></div>
-        <div class="container">
-            <div class="calendar">
-                <h2 class="calendar">Calendar</h2>
-                <div class="month">
-                    <button id="prevMonth" onclick="prevMonth()"><</button>
-                    <h3 id="monthText"></h3>
-                    <button id="nextMonth" onclick="nextMonth()">></button>
-                </div>
-                <div class="year">
-                    <button id="prevYear" onclick="prevYear()"></button>
-                    <h3 id="yearText"></h3>
-                    <button id="nextYear" onclick="nextYear()"></button>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Sun</th>
-                            <th>Mon</th>
-                            <th>Tue</th>
-                            <th>Wed</th>
-                            <th>Thu</th>
-                            <th>Fri</th>
-                            <th>Sat</th>
-                        </tr>
-                    </thead>
-                    <tbody class="calendarBody">
-                    </tbody>
-                </table>
+        <div class="header">
+            <i class="fa-solid fa-table-list fa-2xl"></i>
+            <div class="logo">
+                <h1 id="todoLogo"><span>to</span>DO</h1>
             </div>
         </div>
-        <div class="footer"></div>
+        <div class="container">
+            <div class="sidebar">
+            </div>
+            <div class="content">
+                <div class="calendar">
+                    <div class="calendarHeader">
+                        <div class="month">
+                            <button id="prevMonth" onclick="prevMonth()"><</button>
+                            <h3 id="monthText"></h3>
+                            <button id="nextMonth" onclick="nextMonth()">></button>
+                        </div>
+                        <div class="year">
+                            <button id="prevYear" onclick="prevYear()"><</button>
+                            <h3 id="yearText"></h3>
+                            <button id="nextYear" onclick="nextYear()">></button>
+                        </div>
+                    </div>
+                    <table>
+                        <thead class="weekDays">
+                            <tr>
+                                <th>Sun</th>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                            </tr>
+                        </thead>
+                        <tbody class="calendarBody">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="todoDisplay">
+                    <p>todo</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Copyright ©</p>
+            <script>document.write(new Date().getFullYear())</script>
+            <span>IkkyPT</span>
+            <i class="fa-brands fa-github fa-2x"></i>
+        </div>
         
         <script src="./main.js" async defer></script>
+        <script src="https://kit.fontawesome.com/99f34af06c.js" crossorigin="anonymous"></script>
     </body>
 </html>
