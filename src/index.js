@@ -1,4 +1,5 @@
 import calendar from './calendar';
 import pageUI from './ui';
+import sheet from './styles/style.css' assert { type: "css" };
 
-pageUI.defaultPage();
+pageUI.updateCalendar();

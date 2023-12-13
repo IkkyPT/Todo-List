@@ -1,4 +1,4 @@
-import {getDay, getYear, getMonth, startOfMonth, endOfMonth, getDaysInMonth, getWeeksInMonth, lastDayOfMonth} from 'date-fns'
+import {getYear, getMonth, startOfMonth, endOfMonth, getDaysInMonth, getWeeksInMonth} from 'date-fns'
 
 
 const calendar = (() => {
@@ -27,11 +27,13 @@ const calendar = (() => {
                 if (indexDay > 0 && indexDay <= totalDays) {
                     // Display days of the current month
                     const dayCell = document.createElement('td');
+                    dayCell.classList.add('activeDays');
                     dayCell.textContent = indexDay;
                     row.appendChild(dayCell);
                 } else if (indexDay <= 0 && i === 0) {
                     // Display adjusted days from the previous month
                     const emptyCell = document.createElement('td');
+                    emptyCell.classList.add('prevDays');
                     const adjustedPrevDay = indexDay + lastMonthDay;
                     emptyCell.textContent = adjustedPrevDay;
                     row.appendChild(emptyCell);
@@ -39,6 +41,7 @@ const calendar = (() => {
                 else {
                     // Display adjusted days from the next month
                     const emptyCell = document.createElement('td');
+                    emptyCell.classList.add('nextDays');
                     const adjustedNextDay = indexDay - totalDays + nextMonthDay - 1;
                     emptyCell.textContent = adjustedNextDay;
                     row.appendChild(emptyCell);
