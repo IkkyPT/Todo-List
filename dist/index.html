@@ -9,27 +9,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div class="header">
-            <i class="fa-solid fa-table-list fa-2xl"></i>
-            <div class="logo">
-                <h1 id="todoLogo"><span>to</span>DO</h1>
-            </div>
-        </div>
         <div class="container">
-            <div class="sidebar">
-            </div>
-            <div class="content">
+            <div class="leftSide">
                 <div class="calendar">
                     <div class="calendarHeader">
                         <div class="month">
-                            <button id="prevMonth" onclick="prevMonth()"><</button>
-                            <h3 id="monthText"></h3>
-                            <button id="nextMonth" onclick="nextMonth()">></button>
-                        </div>
-                        <div class="year">
-                            <button id="prevYear" onclick="prevYear()"><</button>
-                            <h3 id="yearText"></h3>
-                            <button id="nextYear" onclick="nextYear()">></button>
+                            <button class="prevMonth" onclick="prevMonth()"><i class="fas fa-angle-left prev"></i></button>
+                            <div class="date"></div>
+                            <button class="nextMonth" onclick="nextMonth()"><i class="fas fa-angle-right next"></i></button>
                         </div>
                     </div>
                     <table>
@@ -48,6 +35,8 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div class="rightSide">
                 <div class="todoDisplay">
                     <p>todo</p>
                 </div>
@@ -58,8 +47,7 @@
             <script>document.write(new Date().getFullYear())</script>
             <span>IkkyPT</span>
             <i class="fa-brands fa-github fa-2x"></i>
-        </div>
-        
+        </div>       
         <script src="./main.js" async defer></script>
         <script src="https://kit.fontawesome.com/99f34af06c.js" crossorigin="anonymous"></script>
     </body>
