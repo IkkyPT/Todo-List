@@ -33,7 +33,8 @@ const calendar = (() => {
                 } else if (indexDay <= 0 && i === 0) {
                     // Display adjusted days from the previous month
                     const emptyCell = document.createElement('td');
-                    emptyCell.classList.add('prevDays');
+                    emptyCell.classList.add('days');
+                    emptyCell.setAttribute('id', 'prevDays')
                     const adjustedPrevDay = indexDay + lastMonthDay;
                     emptyCell.textContent = adjustedPrevDay;
                     row.appendChild(emptyCell);
@@ -42,6 +43,7 @@ const calendar = (() => {
                     // Display adjusted days from the next month
                     const emptyCell = document.createElement('td');
                     emptyCell.classList.add('nextDays');
+                    emptyCell.setAttribute('id', 'nextDays')
                     const adjustedNextDay = indexDay - totalDays + nextMonthDay - 1;
                     emptyCell.textContent = adjustedNextDay;
                     row.appendChild(emptyCell);
