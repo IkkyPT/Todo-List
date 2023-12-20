@@ -1,4 +1,5 @@
-import {getYear, getMonth, startOfMonth, endOfMonth, getDaysInMonth, getWeeksInMonth} from 'date-fns'
+import {format, getYear, getMonth, startOfMonth, endOfMonth, getDaysInMonth, getWeeksInMonth} from 'date-fns'
+import todoModule from './todo';
 
 
 const calendar = (() => {
@@ -29,6 +30,14 @@ const calendar = (() => {
                     const dayCell = document.createElement('td');
                     dayCell.classList.add('activeDays');
                     dayCell.textContent = indexDay;
+
+                    const currentDate = new Date(year, month, indexDay);
+                    const dateKey = format(currentDate, 'dd/MM/yyyy');
+                    if (todoModule.todoStorage[dateKey] && todoModule.todoStorage[dateKey].length > 0) {
+                        // Apply a special style for cells with events
+                        dayCell.classList.add('hasEvent');
+                    }
+
                     row.appendChild(dayCell);
                 } else if (indexDay <= 0 && i === 0) {
                     // Display adjusted days from the previous month
